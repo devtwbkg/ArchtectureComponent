@@ -68,7 +68,9 @@ class MainActivity : AppCompatActivity(), UserAdapter.UserAdapterCallback {
     }
 
     override fun onUpdateUser(user: User) {
-        callDialog(user)
+        startActivity(Intent(this, EditActivity::class.java).apply {
+            putExtra("model", user)
+        })
     }
 
     private fun callDialogViewUser(user: User) = MaterialDialog.Builder(this)
