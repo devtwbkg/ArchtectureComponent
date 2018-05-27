@@ -9,7 +9,7 @@ interface UserDao {
     @Query("SELECT * FROM users")
     fun getAllUsers(): Flowable<List<User>>
 
-    @Query("SELECT * FROM users WHERE id=:id")
+    @Query("SELECT * FROM users WHERE user_id=:id")
     fun getUserById(id: Long): Flowable<User>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

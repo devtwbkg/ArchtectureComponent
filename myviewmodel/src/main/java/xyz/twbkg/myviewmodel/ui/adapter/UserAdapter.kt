@@ -65,7 +65,7 @@ class UserAdapter(val listener: UserAdapterCallback) : RecyclerView.Adapter<Recy
         }
 
         fun onBind(user: User) {
-            itemView.item_tv.text = user.name
+            itemView.item_tv.text = user.user_name
         }
 
         override fun onClick(v: View) {

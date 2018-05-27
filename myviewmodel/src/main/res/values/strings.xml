@@ -2,4 +2,9 @@
     <string name="app_name">MyViewModel</string>
     <string name="add">Add</string>
     <string name="input_your_name">input your name.</string>
+    <string name="first_name">first name</string>
+    <string name="last_name">last name</string>
+    <string name="city">city</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
 </resources>

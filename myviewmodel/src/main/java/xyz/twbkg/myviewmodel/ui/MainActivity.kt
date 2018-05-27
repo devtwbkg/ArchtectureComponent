@@ -47,9 +47,7 @@ class MainActivity : AppCompatActivity(), UserAdapter.UserAdapterCallback {
         }
 
         save_button?.setOnClickListener {
-            val input = input_edt.text.toString()
-            val user = User(input)
-            addItem(user)
+            startActivity(Intent(this, AddActivity::class.java))
         }
     }
 
@@ -75,16 +73,16 @@ class MainActivity : AppCompatActivity(), UserAdapter.UserAdapterCallback {
 
     private fun callDialogViewUser(user: User) = MaterialDialog.Builder(this)
             .title("user data")
-            .content(user.name).show()
+            .content(user.userInfo.firstName).show()
 
     private fun callDialog(user: User) = MaterialDialog.Builder(this)
             .title("user data")
             .inputType(InputType.TYPE_CLASS_TEXT)
-            .input("input your content", user.name, { dialog, input ->
+            .input("input your content", user.userInfo.firstName, { dialog, input ->
                 // Do somethingd
                 dialog.dismiss()
                 user.let { userModel ->
-                    userModel.name = input.toString()
+                    userModel.userInfo.firstName = input.toString()
                 }.run {
                     updateUser(user)
                 }

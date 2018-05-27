@@ -1,1 +1,1 @@
-include ':app', ':myviewmodel'
+include ':app', ':myviewmodel', ':mylifedata'

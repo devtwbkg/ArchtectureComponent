@@ -5,16 +5,16 @@ import android.arch.persistence.room.Embedded
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
-@Entity(tableName = "users")
-data class User(
-        @ColumnInfo(name = "username")
-        var user_name: String,
-        @ColumnInfo(name = "password")
-        var password: String = "",
+@Entity
+data class UserDetail(
+        @ColumnInfo(name = "first_name")
+        var firstName: String = "",
+        @ColumnInfo(name = "last_name")
+        var lastName: String = "",
         @Embedded
-        var userInfo: UserDetail
+        var address: Address
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "user_id")
+    @ColumnInfo(name = "user_detail_id")
     var id: Long = 0
 }
